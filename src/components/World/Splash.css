@@ -1,0 +1,10 @@
+.globe-container {
+    position: relative; /* Make sure the container has a positioning context */
+    margin: 0 auto; /* Center the container horizontally */
+    transition-duration: 5s;
+}
+
+.info-panel {
+    position: absolute;
+    transform: translate(0, 0);
+}
