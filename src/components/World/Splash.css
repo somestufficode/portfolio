@@ -1,10 +1,19 @@
 .globe-container {
-    position: relative; /* Make sure the container has a positioning context */
+    position: absolute;
     margin: 0 auto; /* Center the container horizontally */
     transition-duration: 5s;
+    z-index: 999;
+    top: -200px !important;
+
+    /* margin-bottom: 60%; */
 }
 
 .info-panel {
-    position: absolute;
-    transform: translate(0, 0);
+    position: relative;
 }
+
+/* 
+.info-panel {
+    position: absolute;
+    /* z-index: 999; */
+/* } */ 

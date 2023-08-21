@@ -1,5 +1,5 @@
 import React from 'react';
-import './Projects.scss';
+import './Projects.css';
 import fableton from '../../Fableton.gif';
 import grubhubby from '../../grubhuby.gif';
 import soundspace from '../../SoundSpace.gif';
@@ -10,19 +10,16 @@ const Projects = () => {
         {
           title: "SoundSpace",
           subtitle: "MERN Stack",
-          description: "Adventure is never far away",
           image: soundspace
         },
         {
           title: "GrubHubby",
           subtitle: "Ruby on Rails & React",
-          description: "Let your dreams come true",
           image: grubhubby
         },
         {
           title: "Fableton",
           subtitle: "Vanilla JS",
-          description: "A piece of heaven",
           image: fableton
         }
       ];
@@ -35,7 +32,7 @@ const Projects = () => {
                 </div>
                 <div className="soundspace-description">
                     <h2>SoundSpace</h2>
-                    <p>Project 1 description...</p>
+                    <p>Soundspace, powered by the MERN stack and AWS S3, is a dynamic web app tailored to budding artists with grassroots followings. It offers a platform for artists to effortlessly upload tracks while AWS S3 ensures seamless data storage. The exploration page enables users to discover tracks by location, fostering engagement and insights into audience preferences. Soundspace redefines how emerging artists connect and resonate on a global scale.</p>
                 </div>
             </div>
             <div className="grubhubby">
@@ -43,8 +40,12 @@ const Projects = () => {
                     <img src={grubhubby} alt="GrubHubby" />
                 </div>
                 <div className="grubhubby-description">
-                    <h2>GrubHubby</h2>
-                    <p>Project 2 description...</p>
+                <h2>
+                    <a href="https://www.grubhubby.onrender.com" target="_blank" rel="noopener noreferrer">
+                        GrubHubby
+                    </a>
+                </h2>
+                    <p>GrubHubby is a sophisicated, yet simple, web application that mirrors the functionalities of the popular food delivery platform Grubhub. Built with a blend of Ruby on Rails for backend logic, React with Redux for seamless frontend interactivity, and PostgreSQL for robust data management, GrubHubby offers an intuitive and comprehensive solution for online food ordering and delivery. Leveraging AWS S3 for efficient data storage, GrubHubby ensures secure handling of images, menus, and user-generated content.</p>
                 </div>
             </div>
             <div className="fableton">
@@ -53,7 +54,7 @@ const Projects = () => {
                 </div>
                 <div className="fableton-description">
                     <h2>Fableton</h2>
-                    <p>Project 3 description...</p>
+                    <p>Fableton, utilizing vanilla JavaScript, offers an immersive beat sequencer with kick, snare, hi-hat, and bass tracks, alongside a dynamic piano roll for live melody harmonization. Control BPM, volume, and more in this user-friendly interface, catering to musicians of all levels, showcasing the potential of JavaScript for creative musical expression.</p>
                 </div>
             </div>
         </div>

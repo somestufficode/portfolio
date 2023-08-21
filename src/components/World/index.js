@@ -164,8 +164,7 @@ const World = () => {
     
       // Apply the new transform value to the globe container's style, moving it horizontally
       globeContainer.style.transform = `translateX(${newTranslateX}px)`;
-      
-      // Move the globe's point of view to the new position
+      globeContainer.style.position = 'fixed';
       const newAltitude = 5.0;
       // const currentAltitude = globeEl.current.pointOfView().altitude || 0;
       const altitudeChangeDuration = 2; // in seconds
@@ -223,21 +222,24 @@ const World = () => {
 
   return (
     <>
-    <div className="globe-container">
-    <Globe
-      ref={globeEl}
-      globeImageUrl={GlobeImage}
-      backgroundColor="rgba(255, 0, 0, 0)"
-      bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-      customLayerData={data}
-      customThreeObject={customThreeObject}
-      customThreeObjectUpdate={customThreeObjectUpdate}
-      onCustomLayerClick={handleCustomLayerClick}
-    />
-    </div>
-     <div className="info-panel" style={{ zIndex: 999 }}>
+    {/* <Projects/> */}
+    <div className="info-panel" style={{ zIndex: 999 }}>
         {renderContent}
-      </div>
+        <div className="globe-container">
+        <Globe
+          ref={globeEl}
+          globeImageUrl={GlobeImage}
+          backgroundColor="rgba(255, 0, 0, 0)"
+          bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+          customLayerData={data}
+          customThreeObject={customThreeObject}
+          customThreeObjectUpdate={customThreeObjectUpdate}
+          onCustomLayerClick={handleCustomLayerClick}
+        /> 
+        </div>
+    </div>
+    
+    
     </>
   );
 };
