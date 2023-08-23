@@ -1,15 +1,12 @@
 .globe-container {
-    position: absolute;
+    position: relative;
     margin: 0 auto; /* Center the container horizontally */
     transition-duration: 5s;
     z-index: 999;
-    top: -200px !important;
+    /* margin-left: -200px !important; */
+    /* transform: translate(0, 100) */
 
     /* margin-bottom: 60%; */
-}
-
-.info-panel {
-    position: relative;
 }
 
 /* 

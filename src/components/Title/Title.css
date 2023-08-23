@@ -1,0 +1,25 @@
+/* Assuming this is your CSS */
+.intro-first {
+    text-align: right;
+    margin-right: 50px; 
+    font-size: 8rem; 
+    font-weight: bold;
+  }
+.intro-last {
+    text-align: right;
+    margin-right: 50px; 
+    font-size: 8rem; 
+    font-weight: bold;
+  }
+
+.intro-container {
+    position: absolute;
+    transform: translate(700px,300px);
+}
+  
+.intro-continued {
+    text-align: right;
+    margin-right: 60px;
+    margin-top: 30px;
+    font-size: 20px;
+}

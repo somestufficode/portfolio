@@ -1,0 +1,237 @@
+
+ 
+/* .art-files, .music-files {
+
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+} */
+
+
+/* .content-music {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    perspective: 1000px;
+    margin-left: 55%;
+    margin-bottom: 200px;
+} */
+
+/* .art-div img {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+} */
+
+/* .audio-div, .art-div {
+    display: block;
+    position: absolute;
+    background: #000;
+    width: 200px;
+    height: 200px;
+    line-height: 150px;
+    font-size: 5em;
+    text-align: center;
+    color: #FFF;
+    opacity: 0.95;
+    border-radius: 30px;
+} */
+
+/* .a {
+    transform: rotateY(0deg) translateZ(250px);
+    background: #ed1c24;
+  }
+  .b {
+    transform: rotateY(60deg) translateZ(250px);
+    background: #0072bc;
+  }
+  .c {
+    transform: rotateY(120deg) translateZ(250px);
+    background: #39b54a;
+  }
+  .d {
+    transform: rotateY(180deg) translateZ(250px);
+    background: #f26522;
+  }
+  .e {
+    transform: rotateY(240deg) translateZ(250px);
+    background: #630460;
+  } 
+  .f {
+    transform: rotateY(300deg) translateZ(250px);
+    background: #8c6239;
+  }    */
+
+.art-images {
+    display: flex;
+    width: 42%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+    transform: translate(-180px, 300px);
+    /* position: absolute; */
+}
+
+.music-files {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    transform: translate(-180px, 100px);
+    /* position: absolute; */
+    /* margin-left: 32%; */
+    /* position: relative; */
+}
+
+.documents {
+    transform: translate(-150px, 500px);
+}
+
+.song-square {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background-color: #f0f0f0; /* Light gray background color */
+    border-radius: 8px;
+    cursor: pointer;
+    /* padding: 30px; */
+    margin: 12px;
+    border-radius: 25px;
+    justify-content: center;
+  }
+  
+  .playing {
+    background-color: #c0c0c0; /* Light gray background color when song is playing */
+  }
+  
+  .play-pause-button {
+    font-size: 70px;
+    margin-bottom: 25px;
+    /* margin-left: 10px; */
+  }
+  
+
+
+.art-images img {
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.art-images::-webkit-scrollbar, .music-files::-webkit-scrollbar { 
+    display: none;
+}
+  .image-container img {
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s ease-in-out;
+  } 
+
+  .image-container:hover img {
+    transform: scale(1.1); 
+    
+  }
+  
+  .image-container:active img {
+    transform: scale(1.2); 
+  }
+
+  /* .image-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-overlay.active {
+    display: flex;
+  }
+  
+  .enlarged-image {
+    max-width: 90%;
+    max-height: 90%;
+  } */ */
+
+  .hobbies-container {
+    display: flex;
+    /* justify-content: flex-end; Align contents to the right */
+    /* height: 100vh;  */
+    /* Add some padding for spacing */
+    /* position: relative; */
+    /* left: 200px; */
+    /* right: 0; */
+    flex-direction: column;
+    /* top: 60px; */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+  
+.music-files,
+.art-images,
+.documents {
+  /* display: block; */
+  /* width: 320px; */
+  animation-name: animateFiles;
+  animation-duration: 2500ms;
+  animation-delay: calc(var(--animation-order) * 200ms);
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  /* width: 300px; */
+  /* margin: 10px; */
+  /* text-align: center; */
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* padding: 10px; */
+  /* flex-direction: row; */
+}
+@keyframes animateFiles {
+    from {
+        opacity: 0;
+        margin-left: 100%;
+    }
+    to {
+        opacity: 1;
+        margin-left: 0%;
+    }
+}
+
+.music-files {
+    --animation-order: 1;
+  }
+  
+  .art-images {
+    --animation-order: 2;
+  }
+  
+  .documents {
+    --animation-order: 3;
+  }
+
+.content-section {
+    display: flex;
+    /* flex-direction: column; */
+    position: absolute;
+    margin-left: 50%;
+    /* justify-content: ; */
+    /* padding: 60px; */
+    /* top: 5%; */
+    /* width: 50%; */
+}
+
+
+
+
+
+  /* Add more styles as needed */
+  

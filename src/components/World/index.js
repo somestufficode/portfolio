@@ -7,12 +7,17 @@ import Projects from '../Projects';
 import AboutMe from '../AboutMe';
 import Contact from '../Contact';
 import Hobbies from '../Hobbies';
+import Title from '../Title';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
 
 const World = () => {
   const globeEl = useRef();
   const [data, setData] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [selectedObj, setSelectedObj] = useState(null);
+  const [initialAltitude, setInitialAltitude] = useState(3.5);
+
 
   const randomData = [
     {
@@ -20,7 +25,7 @@ const World = () => {
         name: "About Me",
         lat: 30,
         lng: 45,
-        alt: .50,
+        alt: .40,
         radius: 30,
         color: 'red',
         link: '/aboutme'
@@ -30,7 +35,7 @@ const World = () => {
         name: "Contact",
         lat: -20,
         lng: -120,
-        alt: .50,
+        alt: .40,
         radius: 30,
         color: 'yellow',
         link: '/contact'
@@ -41,7 +46,7 @@ const World = () => {
         name: "Projects",
         lat: 50,
         lng: 170,
-        alt: .50,
+        alt: .40,
         radius: 30,
         color: 'green',
         link: '/projects'
@@ -51,7 +56,7 @@ const World = () => {
         name: "Hobbies",
         lat: -40,
         lng: 30,
-        alt: .50,
+        alt: .40,
         radius: 30,
         color: 'blue',
         link: 'hobbies'
@@ -61,6 +66,14 @@ const World = () => {
 
   useEffect(() => {
     setData(randomData);
+  }, []);
+
+  useEffect(() => {
+    // Access the internal OrbitControls instance
+    console.log(globeEl)
+    console.log(globeEl.current)
+    // Disable zooming
+    globeEl.current.camera.enableZoom = false;
   }, []);
 
   useEffect(() => {
@@ -151,13 +164,13 @@ const World = () => {
       
       // Adjust the newTranslateX based on different obj.id values
       if (obj.id === 1) {
-        newTranslateX = 450; // Move to the right
+        newTranslateX = 800; // Move to the right
       } else if (obj.id === 2) {
-        newTranslateX = -450; // Move to the left
+        newTranslateX = -100; // Move to the left
       } else if (obj.id === 3) {
-        newTranslateX = 450; // Move more to the right
+        newTranslateX = 800; // Move more to the right
       } else if (obj.id === 4) {
-        newTranslateX = -450; // Move more to the left
+        newTranslateX = -100; // Move more to the left
       } else {
         newTranslateX= 0;
       }
@@ -180,7 +193,7 @@ const World = () => {
 
   const renderContent = useMemo(() => {
     if (!selectedObj) {
-      return null; // No selected object, no content to render
+      return <Title />; // No selected object, no content to render
     }
 
     console.log(selectedObj)
@@ -195,7 +208,7 @@ const World = () => {
       case 4:
         return <Hobbies />;
       default:
-        return null; // Return null or a default component if no match
+        return <Title />; // Return null or a default component if no match
     }
   }, [selectedObj]);
 
@@ -220,6 +233,11 @@ const World = () => {
   //   navigate(link);
   // };
 
+  const handleGlobeReady = () => {
+    // Store the initial altitude when the globe is ready
+    setInitialAltitude(3.5);
+  };
+
   return (
     <>
     {/* <Projects/> */}
@@ -235,11 +253,11 @@ const World = () => {
           customThreeObject={customThreeObject}
           customThreeObjectUpdate={customThreeObjectUpdate}
           onCustomLayerClick={handleCustomLayerClick}
+          width={700}
+          onGlobeReady={handleGlobeReady}
         /> 
         </div>
     </div>
-    
-    
     </>
   );
 };
