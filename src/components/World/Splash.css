@@ -1,16 +1,6 @@
 .globe-container {
     position: relative;
-    margin: 0 auto; /* Center the container horizontally */
+    margin: 0 auto; 
     transition-duration: 5s;
     z-index: 999;
-    /* margin-left: -200px !important; */
-    /* transform: translate(0, 100) */
-
-    /* margin-bottom: 60%; */
 }
-
-/* 
-.info-panel {
-    position: absolute;
-    /* z-index: 999; */
-/* } */ 

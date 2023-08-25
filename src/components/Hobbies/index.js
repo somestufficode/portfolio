@@ -21,6 +21,10 @@ import helloChamp from '../../champ.wav';
 import abstraction from '../../abstraction.docx';
 import train from '../../train.docx';
 
+import DocumentModal from '../DocumentModal';
+import { DocViewer, DocViewerRenderers } from "react-doc-viewer";
+
+
 import './hobbies.css'
 
 const songList = [
@@ -66,6 +70,7 @@ const songList = [
 
 const Hobbies = () => {
     const [currentAudioIndex, setCurrentAudioIndex] = useState(null);
+    const [selectedDocument, setSelectedDocument] = useState(null);
 
     const handleAudioClick = (index) => {
       if (currentAudioIndex === index) {
@@ -92,6 +97,15 @@ const Hobbies = () => {
     const closeEnlargedImage = () => {
         setEnlargedImage(null);
     };
+
+    const handleDocumentClick = (document) => {
+      setSelectedDocument(document);
+    };
+  
+    const closeDocumentModal = () => {
+      setSelectedDocument(null);
+    };
+  
 
     return (
         <div className="hobbies-container">
@@ -181,10 +195,33 @@ const Hobbies = () => {
                 {/* </div>
             </div>
            */}
-            <div className="content-section writings">
-            </div>
-        </div>
-    );
+              <div className="content-section writings">
+              <div className="document-grid">
+                {documentList.map((document, index) => (
+                  <div className="document-square" key={index} onClick={() => handleDocumentClick(document)}>
+                    {/* Display the document square */}
+                    <div className="document-thumbnail">
+                      {/* Display document thumbnail here if available */}
+                    </div>
+                    <div className="document-title">{document.title}</div>
+                  </div>
+                ))}
+              </div>
+              {/* Use DocViewer to display the document content */}
+              {selectedDocument && (
+                <div className="document-content">
+                  <DocViewer documents={[{ uri: selectedDocument.filePath }]} renderers={DocViewerRenderers} />
+                </div>
+              )}
+                  {/* Use DocViewer to display the document content */}
+                  {selectedDocument && (
+                    <div className="document-content-modal">
+                      <DocViewer documents={[{ uri: selectedDocument.filePath }]} renderers={DocViewerRenderers} />
+                    </div>
+                  )}
+                </div>
+              </div>
+  );
 };
 
 export default Hobbies;
