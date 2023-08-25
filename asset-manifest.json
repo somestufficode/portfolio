@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fe032be6.css",
+    "main.js": "/static/js/main.194ce2d9.js",
+    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/somethinglightsample.wav": "/static/media/somethinglightsample.1c65a5ecc7d1950957f3.wav",
+    "static/media/SoundSpace.gif": "/static/media/SoundSpace.8133f440d38e10db1f17.gif",
+    "static/media/champ.wav": "/static/media/champ.2e93a88087d25ec587ba.wav",
+    "static/media/mymommaruledthere.wav": "/static/media/mymommaruledthere.578d750cbdd2e6ad8e41.wav",
+    "static/media/rockstar80s.wav": "/static/media/rockstar80s.1b5744ef02483561c0b6.wav",
+    "static/media/inthebeginning.wav": "/static/media/inthebeginning.4ab12864981989bfe5d0.wav",
+    "static/media/Fableton.gif": "/static/media/Fableton.9354821191760a07fc10.gif",
+    "static/media/grubhuby.gif": "/static/media/grubhuby.ef11e7a301b6aff6dd61.gif",
+    "static/media/collage1.jpg": "/static/media/collage1.2cc1873437ce8ab70a58.jpg",
+    "static/media/painting2.JPG": "/static/media/painting2.fd2712a8f5985b7b1ce3.JPG",
+    "static/media/digital6.jpg": "/static/media/digital6.ef6caf9e1b17762ff25a.jpg",
+    "static/media/digital1.jpg": "/static/media/digital1.74cd6d9112548b07b4a7.jpg",
+    "static/media/painting1.JPG": "/static/media/painting1.53916f7508df5eed92ca.JPG",
+    "static/media/welcome.png": "/static/media/welcome.72ef60e3ec5feb77be83.png",
+    "static/media/pastel1.jpg": "/static/media/pastel1.12e9041b31a70d8de6ac.jpg",
+    "static/media/digital2.jpg": "/static/media/digital2.d3d9a8ebdb254736845f.jpg",
+    "static/media/digital4.jpg": "/static/media/digital4.e54044d86d541ffd2a26.jpg",
+    "static/media/digital3.jpg": "/static/media/digital3.96e1a5b3a50dc840713a.jpg",
+    "static/media/digital5.jpg": "/static/media/digital5.0d0d39b0389dd2930eb1.jpg",
+    "static/media/photo1.jpg": "/static/media/photo1.d22723e5d26cf820430a.jpg",
+    "static/media/digital7.jpg": "/static/media/digital7.d932e03984e9407ec2ae.jpg",
+    "static/media/train.docx": "/static/media/train.3205b63abc5136686514.docx",
+    "static/media/abstraction.docx": "/static/media/abstraction.72865007e69d9d016f4c.docx",
+    "index.html": "/index.html",
+    "main.fe032be6.css.map": "/static/css/main.fe032be6.css.map",
+    "main.194ce2d9.js.map": "/static/js/main.194ce2d9.js.map",
+    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe032be6.css",
+    "static/js/main.194ce2d9.js"
+  ]
+}
