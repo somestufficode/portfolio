@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+
+// import abstraction from '../../abstraction.html';
 import painting1 from '../../painting1.JPG';
 import painting2 from '../../painting2.JPG';
 import pastel1 from '../../pastel1.jpg';
@@ -18,10 +20,19 @@ import rockstar80s from '../../rockstar80s.wav';
 import somethingLightSample from '../../somethinglightsample.wav';
 import helloChamp from '../../champ.wav';
 
-import abstraction from '../../abstraction.docx';
-import train from '../../train.docx';
-
+// import abstraction from '../../abstraction.docx';
+// import train from '../../train.docx';
+// import DocumentModal from '../DocumentModal';
+// import abstractionText from '../../abstraction.txt';
 import './hobbies.css'
+
+import TextModal from '../HtmlModal';
+
+// import abstraction from '../../abstraction.txt';
+
+
+// import DocViewer, { PDFRenderer } from 'react-doc-viewer';
+// import DocModal from '../docmodal';
 
 const songList = [
     {
@@ -51,21 +62,28 @@ const songList = [
       },
   ];
 
-  const documentList = [
-    {
-      title: 'Abstraction',
-      filePath: abstraction,
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    },
-    {
-      title: 'Train Ride',
-      filePath: train, 
-      content: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    },
-  ];
+  const textFiles = [
+    { name: 'Abstraction', file: require('../../abstraction.txt') },
+    { name: 'train ride to wherever', file: require('../../train.txt')},
+    { name: 'Friday Night Ponderings', file: require('../../friday.txt')},
+    { name: 'Sartre: Existentialism', file: require('../../final.txt')}
+    // ... Add other files
+];
 
 const Hobbies = () => {
     const [currentAudioIndex, setCurrentAudioIndex] = useState(null);
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [activeContent, setActiveContent] = useState(null);
+
+    const openModal = (content) => {
+        setActiveContent(content);
+        setModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setActiveContent(null);
+        setModalOpen(false);
+    };
 
     const handleAudioClick = (index) => {
       if (currentAudioIndex === index) {
@@ -92,6 +110,13 @@ const Hobbies = () => {
     const closeEnlargedImage = () => {
         setEnlargedImage(null);
     };
+
+    // const [selectedDocIndex, setSelectedDocIndex] = useState(null);
+
+    // const handleDocClick = (index) => {
+    //   setSelectedDocIndex(index);
+    // };
+
 
     return (
         <div className="hobbies-container">
@@ -140,48 +165,18 @@ const Hobbies = () => {
                     </div>
                 )}
             </div>
-            {/* <div className="content-art">
-                <div className="art-files"> */}
-                    {/* <div className="art-div a">
-                        <img src={pastel1} alt="1"/>
-                    </div>
-                    <div className="art-div b">
-                    <img src={painting1}  alt="1"/>
-                    </div>
-                    <div className="art-div c">
-                    <img src={painting2}  alt="1"/>
-                    </div>
-                    <div className="art-div d">
-                    <img src={photo1}  alt="1"/>
-                    </div>
-                    <div className="art-div e">
-                    <img src={digital1}  alt="1"/>
-                    </div>
-                    <div className="art-div f">
-                    <img src={digital2}  alt="1"/>
-                    </div> */}
-                    {/* <div className="art-div g">
-                    <img src={digital3}/>
-                    </div>
-                    <div className="art-div h">
-                    <img src={digital4}/>
-                    </div>
-                    <div className="art-div i">
-                    <img src={digital5}/>
-                    </div>
-                    <div className="art-div j">
-                    <img src={digital6}/>
-                    </div>
-                    <div className="art-div k">
-                    <img src={digital7}/>
-                    </div>
-                    <div className="art-div a">
-                    <img src={collage1}/>
-                    </div> */}
-                {/* </div>
-            </div>
-           */}
+
             <div className="content-section writings">
+            <div className="document-list">
+                    {textFiles.map((file, index) => (
+                        <button key={index} onClick={() => openModal(file)}>
+                            {file.name}
+                        </button>
+                    ))}
+                </div>
+                {isModalOpen && activeContent && (
+                    <TextModal textContent={activeContent} onClose={closeModal} />
+                )}
             </div>
         </div>
     );
