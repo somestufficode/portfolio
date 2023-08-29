@@ -15,7 +15,7 @@ const TextModal = ({ onClose, textContent }) => {
         <div className="modal">
             <div className="modal-content">
                 <span className="close" onClick={onClose}>&times;</span>
-                <h1>{textContent.name}</h1>
+                <h1 className="title-modal">{textContent.name}</h1>
                 <pre>{content}</pre>
             </div>
         </div>
