@@ -70,10 +70,24 @@ const songList = [
     // ... Add other files
 ];
 
+  const artImages = [
+    painting1, painting2, digital1, digital2,
+    digital3, digital4, digital5, digital6,
+    digital7, pastel1, photo1, collage1
+  ]
+
 const Hobbies = () => {
     const [currentAudioIndex, setCurrentAudioIndex] = useState(null);
     const [isModalOpen, setModalOpen] = useState(false);
     const [activeContent, setActiveContent] = useState(null);
+
+    const [imagesLoaded, setImagesLoaded] = useState(false);
+
+    const handleImageLoad = () => {
+        // Check if all images are loaded
+        // In this example, check if all 3 images have loaded
+        setImagesLoaded(true);
+    };
 
     const openModal = (content) => {
         setActiveContent(content);
@@ -145,17 +159,13 @@ const Hobbies = () => {
 
             <div className="content-section art">
                 <div className="art-images">
-                    {[
-                        painting1, painting2, digital1, digital2,
-                        digital3, digital4, digital5, digital6,
-                        digital7, pastel1, photo1, collage1
-                    ].map((imageSrc, index) => (
+                    {artImages.map((imageSrc, index) => (
                         <div
                             key={index}
                             className="image-container"
                             onClick={() => openEnlargedImage(imageSrc)}
-                        >
-                            <img src={imageSrc} alt={`${index}`} />
+                        > 
+                            <img src={imageSrc} onLoad={handleImageLoad} alt={`${index}`} />
                         </div>
                     ))}
                 </div>

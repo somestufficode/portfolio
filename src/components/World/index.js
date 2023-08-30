@@ -166,11 +166,11 @@ const World = () => {
       if (obj.id === 1) {
         newTranslateX = 800; // Move to the right
       } else if (obj.id === 2) {
-        newTranslateX = -100; // Move to the left
+        newTranslateX = -50; // Move to the left
       } else if (obj.id === 3) {
         newTranslateX = 800; // Move more to the right
       } else if (obj.id === 4) {
-        newTranslateX = -100; // Move more to the left
+        newTranslateX = -50; // Move more to the left
       } else {
         newTranslateX= 0;
       }
@@ -253,7 +253,7 @@ const World = () => {
           customThreeObject={customThreeObject}
           customThreeObjectUpdate={customThreeObjectUpdate}
           onCustomLayerClick={handleCustomLayerClick}
-          width={700}
+          width={675}
           onGlobeReady={handleGlobeReady}
         /> 
         </div>
