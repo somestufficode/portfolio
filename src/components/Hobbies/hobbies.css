@@ -150,6 +150,7 @@
   /* padding: 10px; */
   /* flex-direction: row; */
 }
+
 @keyframes animateFiles {
     from {
         opacity: 0;

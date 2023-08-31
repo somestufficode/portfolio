@@ -1,0 +1,9 @@
+.contact-container {
+    position: absolute;
+    transform: translate(700px, 100px);
+    width: 40%;
+}
+
+.contact-content {
+    font-size: 30px;
+}

@@ -20,19 +20,10 @@ import rockstar80s from '../../rockstar80s.wav';
 import somethingLightSample from '../../somethinglightsample.wav';
 import helloChamp from '../../champ.wav';
 
-// import abstraction from '../../abstraction.docx';
-// import train from '../../train.docx';
-// import DocumentModal from '../DocumentModal';
-// import abstractionText from '../../abstraction.txt';
 import './hobbies.css'
 
 import TextModal from '../HtmlModal';
-
-// import abstraction from '../../abstraction.txt';
-
-
-// import DocViewer, { PDFRenderer } from 'react-doc-viewer';
-// import DocModal from '../docmodal';
+import ImageModal from '../ImageModal';
 
 const songList = [
     {
@@ -67,7 +58,6 @@ const songList = [
     { name: 'train ride to wherever', file: require('../../train.txt')},
     { name: 'Friday Night Ponderings', file: require('../../friday.txt')},
     { name: 'Sartre: Existentialism', file: require('../../final.txt')}
-    // ... Add other files
 ];
 
   const artImages = [
@@ -80,13 +70,14 @@ const Hobbies = () => {
     const [currentAudioIndex, setCurrentAudioIndex] = useState(null);
     const [isModalOpen, setModalOpen] = useState(false);
     const [activeContent, setActiveContent] = useState(null);
+    const [enlargedImage, setEnlargedImage] = useState(null);
 
-    const [imagesLoaded, setImagesLoaded] = useState(false);
+    const openEnlargedImage = (imageSrc) => {
+        setEnlargedImage(imageSrc);
+    };
 
-    const handleImageLoad = () => {
-        // Check if all images are loaded
-        // In this example, check if all 3 images have loaded
-        setImagesLoaded(true);
+    const closeEnlargedImage = () => {
+        setEnlargedImage(null);
     };
 
     const openModal = (content) => {
@@ -115,34 +106,9 @@ const Hobbies = () => {
       }
     };
 
-    const [enlargedImage, setEnlargedImage] = useState(null);
-
-    const openEnlargedImage = (imageSrc) => {
-        setEnlargedImage(imageSrc);
-    };
-
-    const closeEnlargedImage = () => {
-        setEnlargedImage(null);
-    };
-
-    // const [selectedDocIndex, setSelectedDocIndex] = useState(null);
-
-    // const handleDocClick = (index) => {
-    //   setSelectedDocIndex(index);
-    // };
-
-
     return (
         <div className="hobbies-container">
           <div className="content-section music">
-            {/* <div className="music-files">
-                <div className="audio-div a" onClick={() => handleAudioClick(inTheBeginning)}>1</div>
-                <div className="audio-div b" onClick={() => handleAudioClick(myMommaRuledThere)}>2</div>
-                <div className="audio-div c" onClick={() => handleAudioClick(rockstar80s)}>3</div>
-                <div className="audio-div d" onClick={() => handleAudioClick(somethingLightSample)}>4</div>
-                <div className="audio-div e" onClick={() => handleAudioClick(helloChamp)}>5</div>
-                <div className="audio-div f" onClick={() => handleAudioClick()}>6</div>
-            </div> */}
               <div className="music-files">
                 {songList.map((song, index) => (
                     <div className="audio-div" key={index}>
@@ -154,27 +120,25 @@ const Hobbies = () => {
                     </div>
                     </div>
                 ))}
-                </div>
+              </div>
         </div>
 
-            <div className="content-section art">
+                <div className="content-section art">
                 <div className="art-images">
-                    {artImages.map((imageSrc, index) => (
-                        <div
-                            key={index}
-                            className="image-container"
-                            onClick={() => openEnlargedImage(imageSrc)}
-                        > 
-                            <img src={imageSrc} onLoad={handleImageLoad} alt={`${index}`} />
-                        </div>
-                    ))}
+                  {artImages.map((imageSrc, index) => (
+                    <div
+                      key={index}
+                      className="image-container"
+                      onClick={() => openEnlargedImage(imageSrc)}
+                    >
+                      <img src={imageSrc} alt={`${index}`} />
+                    </div>
+                  ))}
                 </div>
                 {enlargedImage && (
-                    <div className="enlarged-image-overlay" onClick={closeEnlargedImage}>
-                        <img src={enlargedImage} alt="enlarged" className="enlarged-image" />
-                    </div>
+                  <ImageModal imageSrc={enlargedImage} onClose={closeEnlargedImage} />
                 )}
-            </div>
+              </div>
 
             <div className="content-section writings">
             <div className="document-list">

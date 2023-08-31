@@ -1,0 +1,55 @@
+/* DocumentModal.css */
+
+.image-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 38%;
+    width: 65%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    scrollbar-width: none;  
+    z-index: 999;
+  }
+  
+  .image-modal-content {
+    background-color: white;
+    border-radius: 8px;
+    /* padding: 20px; */
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+  }
+
+  .enlarged-image {
+    width: 120%;
+    height: 120%;
+  }
+  /* .title-modal {
+    font-weight: bold;
+  } */
+  
+  .close {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 50px;
+  }
+  
+  /* .document-content {
+    padding: 10px;
+    white-space: pre-wrap;
+  } */
+
+  .image-modal-overlay::-webkit-scrollbar, .image-modal-content::-webkit-scrollbar, .enlarged-image::-webkit-scrollbar { 
+    display: none;
+}
+  
