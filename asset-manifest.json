@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.4df99987.css",
-    "main.js": "/static/js/main.b149bf43.js",
+    "main.css": "/static/css/main.3e7c4cfd.css",
+    "main.js": "/static/js/main.aa5d7580.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/somethinglightsample.wav": "/static/media/somethinglightsample.1c65a5ecc7d1950957f3.wav",
     "static/media/SoundSpace.gif": "/static/media/SoundSpace.8133f440d38e10db1f17.gif",
@@ -12,6 +12,7 @@
     "static/media/Fableton.gif": "/static/media/Fableton.9354821191760a07fc10.gif",
     "static/media/grubhuby.gif": "/static/media/grubhuby.ef11e7a301b6aff6dd61.gif",
     "static/media/collage1.jpg": "/static/media/collage1.2cc1873437ce8ab70a58.jpg",
+    "static/media/avi.jpg": "/static/media/avi.5434b25994a27fa6b7e3.jpg",
     "static/media/painting2.JPG": "/static/media/painting2.fd2712a8f5985b7b1ce3.JPG",
     "static/media/digital6.jpg": "/static/media/digital6.ef6caf9e1b17762ff25a.jpg",
     "static/media/digital1.jpg": "/static/media/digital1.74cd6d9112548b07b4a7.jpg",
@@ -29,12 +30,12 @@
     "static/media/abstraction.txt": "/static/media/abstraction.3b2a21a5c2549077be12.txt",
     "static/media/friday.txt": "/static/media/friday.0fee82adeaa28985a308.txt",
     "index.html": "/index.html",
-    "main.4df99987.css.map": "/static/css/main.4df99987.css.map",
-    "main.b149bf43.js.map": "/static/js/main.b149bf43.js.map",
+    "main.3e7c4cfd.css.map": "/static/css/main.3e7c4cfd.css.map",
+    "main.aa5d7580.js.map": "/static/js/main.aa5d7580.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4df99987.css",
-    "static/js/main.b149bf43.js"
+    "static/css/main.3e7c4cfd.css",
+    "static/js/main.aa5d7580.js"
   ]
 }
