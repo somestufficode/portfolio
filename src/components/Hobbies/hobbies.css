@@ -44,7 +44,8 @@
     /* padding: 30px; */
     margin: 15px;
     border-radius: 25px;
-    justify-content: center;
+    /* justify-content: center; */
+    flex-direction: column;
   }
 
 .document-list button {
@@ -71,6 +72,12 @@
     margin-bottom: 25px;
     /* margin-left: 10px; */
   }
+
+.song-title p {
+  font-weight: 20px;
+  justify-content: center;
+  margin: -15px;
+}
   
 
 
@@ -79,7 +86,7 @@
     border-radius: 50px;
 }
 
-.art-images::-webkit-scrollbar, .music-files::-webkit-scrollbar { 
+.art-images::-webkit-scrollbar, .music-files::-webkit-scrollbar, .document-list::-webkit-scrollbar { 
     display: none;
 }
   .image-container img {

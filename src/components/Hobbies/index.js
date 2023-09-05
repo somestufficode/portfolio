@@ -27,27 +27,27 @@ import ImageModal from '../ImageModal';
 
 const songList = [
     {
-        title: 'Song 1',
+        title: 'inTheBeginning',
         length: '0:00 - 2:20',
         audio: new Audio(inTheBeginning) 
       },
       {
-        title: 'Song 2',
+        title: 'myMommaRuledThere',
         length: '0:00 - 3:45',
         audio: new Audio(myMommaRuledThere)
       },
       {
-        title: 'Song 3',
+        title: 'rockstar80s',
         length: '0:00 - 4:10',
         audio: new Audio(rockstar80s) 
       },
       {
-        title: 'Song 4',
+        title: 'somethingLight',
         length: '0:00 - 2:50',
         audio: new Audio(somethingLightSample) 
       },
       {
-        title: 'Song 5',
+        title: 'helloChamp',
         length: '0:00 - 1:30',
         audio: new Audio(helloChamp) 
       },
@@ -116,7 +116,9 @@ const Hobbies = () => {
                         <div className="play-pause-button">
                         {currentAudioIndex === index && !song.audio.paused ? '❚❚' : '▶'}
                         </div>
-                        {/* <div className="song-title">{song.title}</div> */}
+                        <div className="song-title">
+                        <p>{song.title}</p>
+                        </div>
                     </div>
                     </div>
                 ))}

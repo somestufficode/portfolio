@@ -248,7 +248,6 @@ const World = () => {
           ref={globeEl}
           globeImageUrl={GlobeImage}
           backgroundColor="rgba(255, 0, 0, 0)"
-          bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
           customLayerData={data}
           customThreeObject={customThreeObject}
           customThreeObjectUpdate={customThreeObjectUpdate}

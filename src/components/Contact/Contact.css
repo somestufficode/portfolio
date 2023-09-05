@@ -7,3 +7,54 @@
 .contact-content {
     font-size: 30px;
 }
+
+.desc-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.contact-details {
+    flex-direction: column;
+    display: flex;
+}
+
+
+.desc-container,
+.email,
+#linkedin-link,
+#github-link {
+  animation-name: animateFiles;
+  animation-duration: 2500ms;
+  animation-delay: calc(var(--animation-order) * 200ms);
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  text-decoration: none;
+}
+
+@keyframes animateFiles {
+    from {
+        opacity: 0;
+        margin-left: 100%;
+    }
+    to {
+        opacity: 1;
+        margin-left: 0%;
+    }
+}
+  
+  .desc-container {
+    --animation-order: 1;
+  }
+  
+  .email {
+    --animation-order: 2;
+  }
+
+  #linkedin-link {
+    --animation-order: 3;
+  }
+  
+  #github-link {
+    --animation-order: 4;
+  }
