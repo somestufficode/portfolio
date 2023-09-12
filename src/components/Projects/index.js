@@ -31,7 +31,11 @@ const Projects = () => {
                     <img src={soundspace} alt="SoundSpace" />
                 </div>
                 <div className="soundspace-description">
-                    <h2>SoundSpace</h2>
+                <h2>
+                    <a href="https://soundspace.onrender.com" target="_blank" rel="noopener noreferrer">
+                        SoundSpace
+                    </a>    
+                </h2>   
                     <p>Soundspace, powered by the MERN stack and AWS S3, is a dynamic web app tailored to budding artists with grassroots followings. It offers a platform for artists to effortlessly upload tracks while AWS S3 ensures seamless data storage. The exploration page enables users to discover tracks by location, fostering engagement and insights into audience preferences. Soundspace redefines how emerging artists connect and resonate on a global scale.</p>
                 </div>
             </div>
@@ -41,7 +45,7 @@ const Projects = () => {
                 </div>
                 <div className="grubhubby-description">
                 <h2>
-                    <a href="https://www.grubhubby.onrender.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://grubhubby.onrender.com" target="_blank" rel="noopener noreferrer">
                         GrubHubby
                     </a>
                 </h2>
@@ -53,8 +57,13 @@ const Projects = () => {
                     <img src={fableton} alt="Fableton" />
                 </div>
                 <div className="fableton-description">
-                    <h2>Fableton</h2>
-                    <p>Fableton, utilizing vanilla JavaScript, offers an immersive beat sequencer with kick, snare, hi-hat, and bass tracks, alongside a dynamic piano roll for live melody harmonization. Control BPM, volume, and more in this user-friendly interface, catering to musicians of all levels, showcasing the potential of JavaScript for creative musical expression.</p>
+                    {/* <h2>Fableton</h2> */}
+                <h2>
+                    <a href="https://vinicozzi.github.io/Fableton/" target="_blank" rel="noopener noreferrer">
+                        Fableton
+                    </a>    
+                </h2>               
+                     <p>Fableton, utilizing vanilla JavaScript, offers an immersive beat sequencer with kick, snare, hi-hat, and bass tracks, alongside a dynamic piano roll for live melody harmonization. Control BPM, volume, and more in this user-friendly interface, catering to musicians of all levels, showcasing the potential of JavaScript for creative musical expression.</p>
                 </div>
             </div>
         </div>
