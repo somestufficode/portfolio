@@ -1,6 +1,9 @@
-html { 
-    /* overflow-y: hidden; */
-    /* overflow-x: hidden; */
+html {
     font-family: 'Roboto Mono', monospace;
-    /* overflow-y: hidden; */
-}
+  }
+  @media screen and (min-width: 768px) {
+    html {
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+  }
