@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 
 // import abstraction from '../../abstraction.html';
 import painting1 from '../../painting1.JPG';
@@ -25,31 +25,28 @@ import './hobbies.css'
 import TextModal from '../HtmlModal';
 import ImageModal from '../ImageModal';
 
+import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
+
 const songList = [
     {
         title: 'inTheBeginning',
-        length: '0:00 - 2:20',
-        audio: new Audio(inTheBeginning) 
+        audio: inTheBeginning 
       },
       {
         title: 'myMommaRuledThere',
-        length: '0:00 - 3:45',
-        audio: new Audio(myMommaRuledThere)
+        audio: myMommaRuledThere
       },
       {
         title: 'rockstar80s',
-        length: '0:00 - 4:10',
-        audio: new Audio(rockstar80s) 
+        audio: rockstar80s
       },
       {
         title: 'somethingLight',
-        length: '0:00 - 2:50',
-        audio: new Audio(somethingLightSample) 
+        audio: somethingLightSample
       },
       {
         title: 'helloChamp',
-        length: '0:00 - 1:30',
-        audio: new Audio(helloChamp) 
+        audio: helloChamp
       },
   ];
 
@@ -92,41 +89,55 @@ const Hobbies = () => {
 
     const handleAudioClick = (index) => {
       if (currentAudioIndex === index) {
-        if (songList[index].audio.paused) {
-          songList[index].audio.play();
-        } else {
-          songList[index].audio.pause();
-        }
+        songList[index].audio.paused ? songList[index].audio.play() : songList[index].audio.pause();
       } else {
-        if (currentAudioIndex !== null) {
-          songList[currentAudioIndex].audio.pause();
-        }
-        songList[index].audio.play();
         setCurrentAudioIndex(index);
+        console.log(index)
       }
     };
+    
+    const musicFilesRef = useRef(null);
+    const documentListRef = useRef(null);
+    const artImagesRef = useRef(null);
+  
+
+    const handleScroll = (event, ref) => {
+      if (event.deltaY > 0) {
+        ref.current.scrollLeft += 100;
+      } else {
+        ref.current.scrollLeft -= 100;
+      }
+    };
+  
 
     return (
-        <div className="hobbies-container">
-          <div className="content-section music">
-              <div className="music-files">
+        <div className="hobbies-container" >
+       <div className="content-section">
+              <div className="music-files" ref={musicFilesRef} onWheel={(e) => handleScroll(e, musicFilesRef)}>
                 {songList.map((song, index) => (
-                    <div className="audio-div" key={index}>
-                    <div className={`song-square ${currentAudioIndex === index && !song.audio.paused ? 'playing' : ''}`} onClick={() => handleAudioClick(index)}>
-                        <div className="play-pause-button">
-                        {currentAudioIndex === index && !song.audio.paused ? '❚❚' : '▶'}
-                        </div>
-                        <div className="song-title">
-                        <p>{song.title}</p>
-                        </div>
+              <div className="song-square" key={index} onClick={() => handleAudioClick(index)}>
+              <AudioPlayer
+                      src={song.audio}
+                      // layout="stacked-reverse"
+                      autoPlay={false}
+                      showFilledProgress={true}
+                      customControlsSection={[RHAP_UI.MAIN_CONTROLS]}
+                      customProgressBarSection={[
+                        RHAP_UI.CURRENT_TIME,
+                        RHAP_UI.PROGRESS_BAR,
+                        RHAP_UI.DURATION,
+                      ]}
+                    />
+                    <div className="song-title">
+                      <p>{song.title}</p>
                     </div>
-                    </div>
+                  </div>
                 ))}
-              </div>
-        </div>
+            </div>
+    </div>
 
-                <div className="content-section art">
-                <div className="art-images">
+                <div className="content-section">
+                <div className="art-images" ref={artImagesRef} onWheel={(e) => handleScroll(e, artImagesRef)}>
                   {artImages.map((imageSrc, index) => (
                     <div
                       key={index}
@@ -142,10 +153,10 @@ const Hobbies = () => {
                 )}
               </div>
 
-            <div className="content-section writings">
-            <div className="document-list">
+            <div className="content-section">
+            <div className="document-list" ref={documentListRef} onWheel={(e) => handleScroll(e, documentListRef)}>
                     {textFiles.map((file, index) => (
-                        <button key={index} onClick={() => openModal(file)}>
+                        <button key={index} className="specific-button" onClick={() => openModal(file)}>
                             {file.name}
                         </button>
                     ))}
