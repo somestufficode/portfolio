@@ -1,25 +1,39 @@
-/* Assuming this is your CSS */
-.intro-first {
+.intro-first,
+.intro-last,
+.intro-continued {
     text-align: right;
-    margin-right: 50px; 
-    font-size: 8rem; 
     font-weight: bold;
-  }
+}
+
+.intro-first,
 .intro-last {
-    text-align: right;
-    margin-right: 50px; 
-    font-size: 8rem; 
-    font-weight: bold;
-  }
+    margin-right: 5vw;
+    font-size: 6vw; 
+}
 
 .intro-container {
     position: absolute;
-    transform: translate(700px,300px);
+    transform: translate(50vw, 25vw);
 }
-  
+
 .intro-continued {
     text-align: right;
-    margin-right: 60px;
-    margin-top: 30px;
-    font-size: 20px;
+    margin-right: 5vw;
+    margin-top: 2vw;
+    font-size: 1.5vw; 
+}
+
+/* Media query for screens with a maximum width of 768px or less */
+@media (max-width: 768px) {
+    .intro-first,
+    .intro-last {
+        font-size: 4vw;
+        margin-right: 2vw; /* Adjust margin as needed for smaller screens */
+    }
+
+    .intro-continued {
+        font-size: 1vw;
+        margin-right: 2vw; /* Adjust margin as needed for smaller screens */
+        margin-top: 1vw; /* Adjust margin as needed for smaller screens */
+    }
 }

@@ -1,0 +1,127 @@
+/* MobileComponent.css */
+
+.contact-container-mob {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .contact-content-mob {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  
+  .contact-details-mob {
+    padding: 20px;
+  }
+  
+  .desc-container-mob {
+    margin-bottom: 20px;
+  }
+  
+  .get-in-touch {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  .email-mob {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+  
+  .social-links-mob {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .linkedin-link-mob,
+  .github-link-mob {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #0073e6;
+  }
+  
+  .projects-container-mob {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(212, 212, 212, 0.2);
+  }
+  
+  .project-container-mob {
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .project-slide-mob {
+    flex: 1;
+  }
+  
+  .project-image-mob {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .project-description-mob {
+    font-size: 1.1em;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /* For links with specific class names */
+  .linkedin-link-mob,
+  .github-link-mob {
+    text-decoration: none;
+  }
+
+  /* In your MobileComponent.css file */
+.title-container-mob {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .name-title-mob {
+    font-size: 2.5em; /* Adjust the size as needed */
+    font-weight: bold;
+    color: #333; /* Adjust the color as needed */
+  }
+  
+  .position-title-mob {
+    font-size: 1.5em; /* Adjust the size as needed */
+    font-weight: bold;
+    color: #666; /* Adjust the color as needed */
+    margin-top: 10px;
+  }
+  
+  .creative-title-mob {
+    font-size: 1.2em; /* Adjust the size as needed */
+    font-weight: bold;
+    color: #888; /* Adjust the color as needed */
+    margin-top: 5px;
+  }
+
+  .description-container-mob {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    border-bottom: 0.125rem solid #ddd; /* Add a dividing line */
+  }
+  
+  .avi-image-mob {
+    width: 40rem; /* Adjust the size of the avi image using rem */
+    height: 10rem; /* Set image height equal to width */
+    margin-right: 1rem; /* Space between image and text */
+    border-radius: 30%; /* Make the image circular */
+  }
+  
+  .description-mob {
+    font-size: 0.5rem;
+    flex-grow: .5; /* Expand to fill available space */
+  }
+  
+  

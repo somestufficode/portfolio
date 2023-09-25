@@ -5,19 +5,19 @@
     overflow-y: hidden;
     -ms-overflow-style: none; 
     scrollbar-width: none;  
-    transform: translate(-100px, 300px);
+    transform: translate(-7vw, 20vw);
     cursor: pointer;
     /* position: absolute; */
 }
 
 .music-files {
     display: flex;
-    width: 79%;
+    width: 20%;
     overflow-x: scroll;
     overflow-y: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    transform: translate(-100px, 100px);
+    transform: translate(-7vw, 6vw);
     /* position: absolute; */
     /* margin-left: 32%; */
     /* position: relative; */
@@ -30,19 +30,19 @@
     overflow-y: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    transform: translate(-100px, 500px);
+    transform: translate(-7vw, 34vw);
 }
 
 .song-square {
     display: flex;
     align-items: center;
-    width: 150px;
-    height: 150px;
+    width: 48vw;
+    height: 12vw;
     background-color: #f0f0f0; /* Light gray background color */
     border-radius: 8px;
     cursor: pointer;
     /* padding: 30px; */
-    margin: 15px;
+    margin: 1vw;
     border-radius: 25px;
     /* justify-content: center; */
     flex-direction: column;
@@ -82,7 +82,7 @@
 
 
 .art-images img {
-    padding: 15px;
+    padding: .8vw;
     border-radius: 50px;
 }
 

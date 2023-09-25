@@ -1,104 +1,74 @@
 .projects-container {
-    position: absolute;
-    display: flex; 
-    left: 200px;
-    flex-direction: column;
-    top: 60px;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  position: absolute;
+  display: flex;
+  left: 5vw; /* Use vw units for horizontal positioning */
+  flex-direction: column;
+  top: 1.5vw; /* Use vw units for vertical positioning */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
-  
+
 .soundspace,
 .grubhubby,
 .fableton {
-    /* display: block; */
-    /* width: 320px; */
-    animation-name: animateIn;
-    animation-duration: 2000ms;
-    animation-delay: calc(var(--animation-order) * 500ms);
-    animation-fill-mode: both;
-    animation-timing-function: ease-in-out;
-    width: 300px;
-    margin: 10px;
-    /* text-align: center; */
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    flex-direction: row;
-  }
+  animation-name: animateIn;
+  animation-duration: 2000ms;
+  animation-delay: calc(var(--animation-order) * 500ms);
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  width: 20vw; /* Use vw units for width */
+  margin: 1vw; /* Use vw units for margin */
+  display: flex;
+  justify-content: space-between;
+  padding: 1vw; /* Use vw units for padding */
+  flex-direction: row;
+}
 
-  .soundspace {
-    --animation-order: 1;
-  }
-  
-  .grubhubby {
-    --animation-order: 2;
-  }
-  
-  .fableton {
-    --animation-order: 3;
-  }
+.soundspace {
+  --animation-order: 1;
+}
+
+.grubhubby {
+  --animation-order: 2;
+}
+
+.fableton {
+  --animation-order: 3;
+}
 
 @keyframes animateIn {
   0% {
-    opacity: 0;
-    transform: scale(0.6) translateY(-8px);
+      opacity: 0;
+      transform: scale(0.6) translateY(-0.8vw); /* Use vw units for transform */
   }
-  
+
   100% {
-    opacity: 1;
+      opacity: 1;
   }
 }
-  
-  .grubhubby img {
-    width: 300px;
-    height: auto;
-    padding-right: 20px;
-    margin-bottom: 10px;
-  }
-  .fableton img {
-    width: 300px;
-    height: auto;
-    padding-right: 20px;
-    margin-bottom: 10px;
-  }
-  .soundspace img {
-    width: 300px;
-    height: auto;
-    padding-right: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .grubhubby-description h2,
-  .soundspace-description h2,
-  .fableton-description h2 {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
-  }
-  
-  .grubhubby-description p,
-  .soundspace-description p, 
-  .fableton-description p {
-    font-size: 10px;
-    color: #000000;
-    width: 300px;
-    height: 160px;
-    overflow: hidden;
-    /* word-wrap: break-word; */
 
-    /* align-content: flex-start; */
-  }
+.grubhubby img,
+.fableton img,
+.soundspace img {
+  width: 20vw; /* Use vw units for image width */
+  height: auto;
+  padding-right: 1vw; /* Use vw units for padding */
+  margin-bottom: 1vw; /* Use vw units for margin */
+}
 
-  .grubhubby-description ,
-  .soundspace-description , 
-  .fableton-description  {
-    /* font-size: 14px; */
-    color: #666;
-    /* display: flex; */
-    /* width: 200px; */
-    /* word-wrap: break-word; */
-    /* overflow: hidden;  */
-    /* align-content: flex-start; */
-  }
-  
-  
+.grubhubby-description h2,
+.soundspace-description h2,
+.fableton-description h2 {
+  margin: 0;
+  font-size: 1.5vw; /* Use vw units for font size */
+  color: #333;
+}
+
+.grubhubby-description p,
+.soundspace-description p,
+.fableton-description p {
+  font-size: 0.8vw; /* Use vw units for font size */
+  color: #000000;
+  width: 20vw;
+  height: 10.67vw; /* Use vw units for height */
+  overflow: hidden;
+}

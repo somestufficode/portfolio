@@ -1,16 +1,29 @@
-.globe-container {
-    position: relative;
-    margin: 0 auto; /* Center the container horizontally */
-    transition-duration: 5s;
-    z-index: 999;
-    /* margin-left: -200px !important; */
-    /* transform: translate(0, 100) */
-
-    /* margin-bottom: 60%; */
-}
 
 /* 
 .info-panel {
     position: absolute;
     /* z-index: 999; */
 /* } */ 
+
+/* Default styles for regular desktop screens */
+.info-panel {
+    display: flex;
+    flex-direction: row; /* Arrange content in a row by default */
+  }
+  
+  .globe-container {
+    flex: 1; /* Allow the globe container to expand and take available space */
+    order: 2; /* Place the globe container as the second item in the row */
+  }
+  
+  /* Media query for screens with a maximum width of 768px or less */
+  @media (max-width: 768px) {
+    .info-panel {
+      flex-direction: column; /* Stack content vertically on smaller screens */
+    }
+  
+    .globe-container {
+      order: 1; /* Place the globe container as the first item in the column */
+    }
+  }
+  

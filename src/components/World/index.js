@@ -9,6 +9,8 @@ import Contact from '../Contact';
 import Hobbies from '../Hobbies';
 import Title from '../Title';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import './Splash.css';
+import MobileComponent from '../MobileComponent'; // Import your mobile component
 
 
 const World = () => {
@@ -17,6 +19,7 @@ const World = () => {
   // const navigate = useNavigate();
   const [selectedObj, setSelectedObj] = useState(null);
   const [initialAltitude, setInitialAltitude] = useState(3.5);
+  const [isMobileView, setIsMobileView] = useState(false); // Track mobile view
 
 
   const randomData = [
@@ -73,7 +76,7 @@ const World = () => {
     console.log(globeEl)
     console.log(globeEl.current)
     // Disable zooming
-    globeEl.current.camera.enableZoom = false;
+    // globeEl.current.camera.enableZoom = false;
   }, []);
 
   useEffect(() => {
@@ -144,6 +147,7 @@ const World = () => {
   //   }
   // };
 
+
   const handleCustomLayerClick = (obj, event, { lat, lng }) => {
     // Define the altitude for the globe's new position
     // const altitude = 5.0;
@@ -164,19 +168,19 @@ const World = () => {
       
       // Adjust the newTranslateX based on different obj.id values
       if (obj.id === 1) {
-        newTranslateX = 800; // Move to the right
+        newTranslateX = 55; // Move to the right
       } else if (obj.id === 2) {
-        newTranslateX = -50; // Move to the left
+        newTranslateX = -5; // Move to the left
       } else if (obj.id === 3) {
-        newTranslateX = 800; // Move more to the right
+        newTranslateX = 55; // Move more to the right
       } else if (obj.id === 4) {
-        newTranslateX = -50; // Move more to the left
+        newTranslateX = -5; // Move more to the left
       } else {
         newTranslateX= 0;
       }
     
       // Apply the new transform value to the globe container's style, moving it horizontally
-      globeContainer.style.transform = `translateX(${newTranslateX}px)`;
+      globeContainer.style.transform = `translateX(${newTranslateX}vw)`;
       globeContainer.style.position = 'fixed';
       const newAltitude = 5.0;
       // const currentAltitude = globeEl.current.pointOfView().altitude || 0;
@@ -193,7 +197,7 @@ const World = () => {
 
   const renderContent = useMemo(() => {
     if (!selectedObj) {
-      return <Title />; // No selected object, no content to render
+      return <Title/>; // Change Back To Title After
     }
 
     console.log(selectedObj)
@@ -238,9 +242,18 @@ const World = () => {
     setInitialAltitude(3.5);
   };
 
+  useEffect(() => {
+    const screenWidth = window.innerWidth;
+    console.log(screenWidth)
+    setIsMobileView(screenWidth <= 768); // Adjust the threshold as needed
+  }, []);
+
+
   return (
     <>
-    {/* <Projects/> */}
+    {isMobileView ? (
+        <MobileComponent /> 
+      ) : (
     <div className="info-panel" style={{ zIndex: 999 }}>
         {renderContent}
         <div className="globe-container">
@@ -257,6 +270,7 @@ const World = () => {
         /> 
         </div>
     </div>
+      )}
     </>
   );
 };
