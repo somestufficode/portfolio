@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.eea40902.css",
-    "main.js": "/static/js/main.2abd21f1.js",
+    "main.css": "/static/css/main.71f731f8.css",
+    "main.js": "/static/js/main.c696881d.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/somethinglightsample.wav": "/static/media/somethinglightsample.1c65a5ecc7d1950957f3.wav",
     "static/media/SoundSpace.gif": "/static/media/SoundSpace.8133f440d38e10db1f17.gif",
@@ -25,17 +25,18 @@
     "static/media/digital5.jpg": "/static/media/digital5.0d0d39b0389dd2930eb1.jpg",
     "static/media/photo1.jpg": "/static/media/photo1.d22723e5d26cf820430a.jpg",
     "static/media/digital7.jpg": "/static/media/digital7.d932e03984e9407ec2ae.jpg",
+    "static/media/mail.png": "/static/media/mail.ac863c4a1efc2b9026dd.png",
     "static/media/train.txt": "/static/media/train.91a909c9da12a9d38f03.txt",
     "static/media/final.txt": "/static/media/final.f66090dfc0f88046eb92.txt",
     "static/media/abstraction.txt": "/static/media/abstraction.3b2a21a5c2549077be12.txt",
     "static/media/friday.txt": "/static/media/friday.0fee82adeaa28985a308.txt",
     "index.html": "/index.html",
-    "main.eea40902.css.map": "/static/css/main.eea40902.css.map",
-    "main.2abd21f1.js.map": "/static/js/main.2abd21f1.js.map",
+    "main.71f731f8.css.map": "/static/css/main.71f731f8.css.map",
+    "main.c696881d.js.map": "/static/js/main.c696881d.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.eea40902.css",
-    "static/js/main.2abd21f1.js"
+    "static/css/main.71f731f8.css",
+    "static/js/main.c696881d.js"
   ]
 }
