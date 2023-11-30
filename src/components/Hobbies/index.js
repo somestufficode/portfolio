@@ -87,14 +87,14 @@ const Hobbies = () => {
         setModalOpen(false);
     };
 
-    const handleAudioClick = (index) => {
-      if (currentAudioIndex === index) {
-        songList[index].audio.paused ? songList[index].audio.play() : songList[index].audio.pause();
-      } else {
-        setCurrentAudioIndex(index);
-        console.log(index)
-      }
-    };
+    // const handleAudioClick = (index) => {
+    //   if (currentAudioIndex === index) {
+    //     songList[index].audio.paused ? songList[index].audio.play() : songList[index].audio.pause();
+    //   } else {
+    //     setCurrentAudioIndex(index);
+    //     console.log(index)
+    //   }
+    // };
     
     const musicFilesRef = useRef(null);
     const documentListRef = useRef(null);
@@ -115,10 +115,10 @@ const Hobbies = () => {
        <div className="content-section">
               <div className="music-files" ref={musicFilesRef} onWheel={(e) => handleScroll(e, musicFilesRef)}>
                 {songList.map((song, index) => (
-              <div className="song-square" key={index} onClick={() => handleAudioClick(index)}>
+              <div className="song-square" key={index}>
               <AudioPlayer
                       src={song.audio}
-                      // layout="stacked-reverse"
+                      layout="stacked-reverse"
                       autoPlay={false}
                       showFilledProgress={true}
                       customControlsSection={[RHAP_UI.MAIN_CONTROLS]}
