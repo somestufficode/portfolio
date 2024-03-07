@@ -23,16 +23,16 @@ const World = () => {
 
 
   const randomData = [
-    {
-        id: 1,
-        name: "About Me",
-        lat: 30,
-        lng: 45,
-        alt: .40,
-        radius: 30,
-        color: 'red',
-        link: '/aboutme'
-    },
+    // {
+    //     id: 1,
+    //     name: "About Me",
+    //     lat: 30,
+    //     lng: 45,
+    //     alt: .40,
+    //     radius: 30,
+    //     color: 'red',
+    //     link: '/aboutme'
+    // },
     {
         id: 2,
         name: "Contact",
@@ -51,7 +51,7 @@ const World = () => {
         lng: 170,
         alt: .40,
         radius: 30,
-        color: 'green',
+        color: 'red',
         link: '/projects'
     },
     {
@@ -203,8 +203,8 @@ const World = () => {
     console.log(selectedObj)
 
     switch (selectedObj.id) {
-      case 1:
-        return <AboutMe />;
+      // case 1:
+      //   return <AboutMe />;
       case 2:
         return <Contact />;
       case 3:
