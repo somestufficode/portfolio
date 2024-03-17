@@ -38,12 +38,17 @@
   width: 60%;
 }
 
+.resume-icon {
+  width: 80%;
+}
+
 .desc-container,
 .mail-icon,
 .linkedin-icon,
-.github-icon {
+.github-icon,
+.resume-icon {
   animation-name: animateFiles;
-  animation-duration: 2500ms;
+  animation-duration: 2000ms;
   animation-delay: calc(var(--animation-order) * 200ms);
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
@@ -62,17 +67,21 @@
 }
   
   .desc-container {
-    --animation-order: 5;
+    --animation-order: 6;
   }
   
   .mail-icon {
-    --animation-order: 4;
+    --animation-order: 5;
   }
 
   .linkedin-icon {
-    --animation-order: 2;
+    --animation-order: 3;
   }
   
   .github-icon {
-    --animation-order: 3;
+    --animation-order: 4;
+  }
+
+  .resume-icon {
+    --animation-order: 7;
   }

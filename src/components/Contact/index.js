@@ -3,6 +3,7 @@ import './Contact.css';
 import mail from '../../mail.png';
 import github from '../../github.png';
 import linkedin from '../../linkedin.png';
+import resumeIcon from '../../resumeIcon.png'
 
 const Contact = () => {
   return (
@@ -10,7 +11,7 @@ const Contact = () => {
       <div className="contact-content">
         <div className="contact-details">
           <div className="desc-container">
-            <p className="get-in-touch">If you'd like to get in touch, feel free to reach out through the following channels:</p>
+            <p className="get-in-touch">If you'd like to get in touch or connect, feel free to reach out through the following channels (resume included last):</p>
           </div>
           <div className="icon-links">
           <a id="linkedin-link" href="https://www.linkedin.com/in/minicozzi" target="_blank" rel="noopener noreferrer">
@@ -23,6 +24,9 @@ const Contact = () => {
               {/* vincentminicozzi00@gmail.com */}
               <img className="mail-icon" src={mail} alt="Email" />
             </a>
+          <a href="https://docs.google.com/document/d/e/2PACX-1vQTZ2WhHCVNKijDJ26s7q4bvGJ9c7J9Pc9IUCMcpOO8jRDLNBL5r-mf0i8uFIdIRsRuT-hn9qwWLFMl/pub" target="_blank" rel="noopener noreferrer">
+              <img className="resume-icon" src={resumeIcon} alt="Resume" />
+          </a>
           {/* <li>AngelList: <a href="https://angel.co/vincent-minicozzi" target="_blank" rel="noopener noreferrer">angel.co/yourusername</a></li> */}
           </div>
         </div>

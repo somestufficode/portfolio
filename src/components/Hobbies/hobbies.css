@@ -90,7 +90,7 @@
 .art-images,
 .document-list {
   animation-name: animateFiles;
-  animation-duration: 2500ms;
+  animation-duration: 2000ms;
   animation-delay: calc(var(--animation-order) * 200ms);
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
