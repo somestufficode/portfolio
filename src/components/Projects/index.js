@@ -32,7 +32,7 @@ const Projects = () => {
                 </div>
                 <div className="soundspace-description">
                 <h2>
-                    <a href="https://soundspace.onrender.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://soundspace-0iyz.onrender.com/" target="_blank" rel="noopener noreferrer">
                         SoundSpace
                     </a>    
                 </h2>   
