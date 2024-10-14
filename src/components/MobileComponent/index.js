@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ReactLoading from 'react-loading'; // Import the ReactLoading component
 import fableton from '../../Fableton.gif';
 import grubhubby from '../../grubhuby.gif';
 import soundspace from '../../SoundSpace.gif';
@@ -14,6 +15,8 @@ import resumeIcon from '../../resumeIcon.png';
 import mail from '../../mail.png';
 
 const MobileComponent = () => {
+  const [loading, setLoading] = useState(true); // Set the initial loading state
+
   const slides = [
     {
       title: "Work Scheduler",
@@ -27,7 +30,7 @@ const MobileComponent = () => {
       subtitle: "Next.js/Typescript/Tailwind/MongoDB",
       image: zealthy,
       link: "https://zealthy-full-stack.vercel.app/",
-      description: "Tech stack includes Next.js, TypeScript, and MongoDB. Users can create support tickets, and admins can manage and respond to them."
+      description: "Users can create support tickets, and admins can manage and respond to them. Optimized for mobile responsiveness."
     },
     {
       title: "SoundSpace",
@@ -45,9 +48,27 @@ const MobileComponent = () => {
     },
   ];
 
+  // Simulate a data loading process with a timeout
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false); // Stop loading after 2.5 seconds
+    }, 2500); // Simulated delay of 2.5 seconds
+
+    return () => clearTimeout(timer); // Cleanup the timer on component unmount
+  }, []);
+
+  // Show the loading state until everything is ready
+  if (loading) {
+    return (
+      <div className="loading-container">
+        <ReactLoading type="bars" color="#007BFF" height={100} width={100} />
+      </div>
+    );
+  }
+
+  // Render the component after loading
   return (
     <div className="mobile-profile-container">    
-
       <section className="mobile-profile-section">
         <img src={avi} alt="Vincent Minicozzi" className="mobile-profile-picture" />
         <h1 className="mobile-profile-name">Vincent Minicozzi</h1>
@@ -60,9 +81,6 @@ const MobileComponent = () => {
           <a href="mailto:vincentminicozzi00@gmail.com" className="mobile-button-icon">
             <img className="mobile-email-icon" src={mail} alt="Email" />
           </a>      
-        {/* </div> */}
-
-        {/* <div className="mobile-social-icons mobile-social-icons-inline"> */}
           <a href="https://www.linkedin.com/in/minicozzi" target="_blank" rel="noopener noreferrer">
             <img src={linkedinIcon} alt="LinkedIn" className="mobile-icon" />
           </a>
@@ -73,11 +91,16 @@ const MobileComponent = () => {
       </section>
 
       <section className="mobile-projects-section">
+        <p className="swipe-text">Swipe to see more projects!</p>
         <Swiper spaceBetween={20} slidesPerView={1} centeredSlides pagination={{ clickable: true }}>
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
               <div className="mobile-project-card">
-                <img src={slide.image} alt={slide.title} className="mobile-project-image" />
+                <img
+                  src={slide.image}
+                  alt={slide.title}
+                  className="mobile-project-image"
+                />
                 <div className="mobile-project-title-container">
                   <h2 className="mobile-project-title">{slide.title}</h2>
                   <a href={slide.link} target="_blank" rel="noopener noreferrer" className="mobile-button-blue">Visit</a>
@@ -87,6 +110,10 @@ const MobileComponent = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        {/* Desktop Recommendation */}
+        <div className="desktop-message">
+          <p>👋 Pssssh. This site looks even better on desktop. 😉</p>
+        </div>
       </section>
     </div>
   );
