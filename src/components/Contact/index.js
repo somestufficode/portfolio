@@ -17,7 +17,7 @@ const Contact = () => {
           <a id="linkedin-link" href="https://www.linkedin.com/in/minicozzi" target="_blank" rel="noopener noreferrer">
             <img className="linkedin-icon" src={linkedin} alt="LinkedIn" />
           </a>
-          <a id="github-link" href="https://github.com/vinicozzi" target="_blank" rel="noopener noreferrer">
+          <a id="github-link" href="https://github.com/somestufficode" target="_blank" rel="noopener noreferrer">
             <img className="github-icon" src={github} alt="GitHub" />
           </a>
             <a href="mailto:vincentminicozzi00@gmail.com">

@@ -1,74 +1,67 @@
 .projects-container {
   position: absolute;
-  display: flex;
-  left: 5vw; /* Use vw units for horizontal positioning */
-  flex-direction: column;
-  top: 1.5vw; /* Use vw units for vertical positioning */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2vw;
+  left: 5vw;
+  top: 1.5vw;
+  width: 50vw;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.soundspace,
-.grubhubby,
-.fableton {
+.project-item {
   animation-name: animateIn;
   animation-duration: 2000ms;
   animation-delay: calc(var(--animation-order) * 500ms);
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
-  width: 20vw; /* Use vw units for width */
-  margin: 1vw; /* Use vw units for margin */
   display: flex;
-  justify-content: space-between;
-  padding: 1vw; /* Use vw units for padding */
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1vw;
 }
 
-.soundspace {
-  --animation-order: 1;
-}
-
-.grubhubby {
-  --animation-order: 2;
-}
-
-.fableton {
-  --animation-order: 3;
-}
+.project-item:nth-child(1) { --animation-order: 1; }
+.project-item:nth-child(2) { --animation-order: 2; }
+.project-item:nth-child(3) { --animation-order: 3; }
+.project-item:nth-child(4) { --animation-order: 4; }
 
 @keyframes animateIn {
   0% {
-      opacity: 0;
-      transform: scale(0.6) translateY(-0.8vw); /* Use vw units for transform */
+    opacity: 0;
+    transform: scale(0.6) translateY(-0.8vw);
   }
-
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
-.grubhubby img,
-.fableton img,
-.soundspace img {
-  width: 20vw; /* Use vw units for image width */
+.project-image img {
+  width: 100%;
+  max-width: 15vw;
   height: auto;
-  padding-right: 1vw; /* Use vw units for padding */
-  margin-bottom: 1vw; /* Use vw units for margin */
+  margin-bottom: 1vw;
 }
 
-.grubhubby-description h2,
-.soundspace-description h2,
-.fableton-description h2 {
-  margin: 0;
-  font-size: 1.5vw; /* Use vw units for font size */
+.project-description h2 {
+  margin: 0 0 0.5vw 0;
+  font-size: 1.5vw;
   color: #333;
 }
 
-.grubhubby-description p,
-.soundspace-description p,
-.fableton-description p {
-  font-size: 0.8vw; /* Use vw units for font size */
+.project-description p {
+  font-size: 0.7vw;
   color: #000000;
-  width: 20vw;
-  height: 10.67vw; /* Use vw units for height */
-  overflow: hidden;
+  max-width: 15vw;
+  margin: 0 auto;
+}
+
+.project-description a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-description a:hover {
+  text-decoration: underline;
 }

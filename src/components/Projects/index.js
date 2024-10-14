@@ -3,70 +3,62 @@ import './Projects.css';
 import fableton from '../../Fableton.gif';
 import grubhubby from '../../grubhuby.gif';
 import soundspace from '../../SoundSpace.gif';
+import zealthy from '../../zealthy.gif';
+import scheduler from '../../scheduler.gif';
 
 const Projects = () => {
-
-    const slides = [
+    const projects = [
         {
-          title: "SoundSpace",
-          subtitle: "MERN Stack",
-          image: soundspace
+            title: "SoundSpace",
+            image: soundspace,
+            link: "https://soundspace-0iyz.onrender.com/",
+            description: "Soundspace, powered by the MERN stack and AWS S3, is a dynamic web app tailored to budding artists with grassroots followings."
+        },
+        // {
+        //     title: "GrubHubby",
+        //     image: grubhubby,
+        //     link: "https://grubhubby.onrender.com",
+        //     description: "GrubHubby is a sophisticated, yet simple, web application that mirrors the functionalities of the popular food delivery platform Grubhub. Built with a blend of Ruby on Rails for backend logic, React with Redux for frontend interactivity, and PostgreSQL for data management, GrubHubby offers an intuitive solution for online food ordering and delivery."
+        // },
+        {
+            title: "Work Scheduler",
+            image: scheduler,
+            link: "https://rockwall.vercel.app",
+            description: "This is an active scheduler used by the employees at a part-time job that I supervise. (Please refrain from submitting any information on the site.)"
         },
         {
-          title: "GrubHubby",
-          subtitle: "Ruby on Rails & React",
-          image: grubhubby
+            title: "Fableton",
+            image: fableton,
+            link: "https://vinicozzi.github.io/Fableton/",
+            description: "Fableton, utilizing vanilla JavaScript, offers an immersive beat sequencer with kick, snare, hi-hat, and bass tracks, alongside a dynamic piano roll for live melody harmonization. Control BPM, volume, and more in this user-friendly interface, catering to musicians of all levels."
         },
         {
-          title: "Fableton",
-          subtitle: "Vanilla JS",
-          image: fableton
+            title: "Support Ticket Generator",
+            image: zealthy,
+            link: "https://zealthy-full-stack.vercel.app/",
+            description: "Tech stack includes Next.js, TypeScript, and MongoDB. Offers end users an option to create a support ticket to handle a recent issue. In the admin panel, users can modify tickets by status, as well as responding to a specific support ticket."
         }
-      ];
+    ];
 
     return (
         <div className="projects-container">
-            <div className="soundspace">
-                <div className="soundspace-images">
-                    <img src={soundspace} alt="SoundSpace" />
+            {projects.map((project, index) => (
+                <div key={index} className={`project-item ${project.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                    <div className="project-image">
+                        <img src={project.image} alt={project.title} />
+                    </div>
+                    <div className="project-description">
+                        <h2>
+                            <a href={project.link} target="_blank" rel="noopener noreferrer">
+                                {project.title}
+                            </a>
+                        </h2>
+                        <p>{project.description}</p>
+                    </div>
                 </div>
-                <div className="soundspace-description">
-                <h2>
-                    <a href="https://soundspace-0iyz.onrender.com/" target="_blank" rel="noopener noreferrer">
-                        SoundSpace
-                    </a>    
-                </h2>   
-                    <p>Soundspace, powered by the MERN stack and AWS S3, is a dynamic web app tailored to budding artists with grassroots followings. It offers a platform for artists to effortlessly upload tracks while AWS S3 ensures seamless data storage. The exploration page enables users to discover tracks by location, fostering engagement and insights into audience preferences. Soundspace redefines how emerging artists connect and resonate on a global scale.</p>
-                </div>
-            </div>
-            <div className="grubhubby">
-                <div className="grubhubby-images">
-                    <img src={grubhubby} alt="GrubHubby" />
-                </div>
-                <div className="grubhubby-description">
-                <h2>
-                    <a href="https://grubhubby.onrender.com" target="_blank" rel="noopener noreferrer">
-                        GrubHubby
-                    </a>
-                </h2>
-                    <p>GrubHubby is a sophisicated, yet simple, web application that mirrors the functionalities of the popular food delivery platform Grubhub. Built with a blend of Ruby on Rails for backend logic, React with Redux for seamless frontend interactivity, and PostgreSQL for robust data management, GrubHubby offers an intuitive and comprehensive solution for online food ordering and delivery. Leveraging AWS S3 for efficient data storage, GrubHubby ensures secure handling of images, menus, and user-generated content.</p>
-                </div>
-            </div>
-            <div className="fableton">
-                <div className="fableton-images">
-                    <img src={fableton} alt="Fableton" />
-                </div>
-                <div className="fableton-description">
-                    {/* <h2>Fableton</h2> */}
-                <h2>
-                    <a href="https://vinicozzi.github.io/Fableton/" target="_blank" rel="noopener noreferrer">
-                        Fableton
-                    </a>    
-                </h2>               
-                     <p>Fableton, utilizing vanilla JavaScript, offers an immersive beat sequencer with kick, snare, hi-hat, and bass tracks, alongside a dynamic piano roll for live melody harmonization. Control BPM, volume, and more in this user-friendly interface, catering to musicians of all levels, showcasing the potential of JavaScript for creative musical expression.</p>
-                </div>
-            </div>
+            ))}
         </div>
     );
 };
+
 export default Projects;

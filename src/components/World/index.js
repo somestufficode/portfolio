@@ -266,11 +266,11 @@ const World = () => {
           customThreeObjectUpdate={customThreeObjectUpdate}
           onCustomLayerClick={handleCustomLayerClick}
           width={675}
-          onGlobeReady={handleGlobeReady}
+          // onGlobeReady={handleGlobeReady}
         /> 
         </div>
     </div>
-      )}
+     )} 
     </>
   );
 };
