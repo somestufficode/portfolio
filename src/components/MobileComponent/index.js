@@ -32,20 +32,20 @@ const MobileComponent = () => {
       link: "https://zealthy-full-stack.vercel.app/",
       description: "Users can create support tickets, and admins can manage and respond to them. Optimized for mobile responsiveness."
     },
-    {
-      title: "SoundSpace",
-      subtitle: "MERN",
-      image: soundspace,
-      link: "https://soundspace-0iyz.onrender.com/",
-      description: "Soundspace, powered by the MERN stack and AWS S3, is a dynamic web app tailored to budding artists with grassroots followings."
-    },
-    {
-      title: "Fableton",
-      subtitle: "Vanilla JS",
-      image: fableton,
-      link: "https://vinicozzi.github.io/Fableton/",
-      description: "A beat sequencer with kick, snare, hi-hat, and bass tracks. Built using vanilla JS, it offers a piano roll for live melody harmonization."
-    },
+    // {
+    //   title: "SoundSpace",
+    //   subtitle: "MERN",
+    //   image: soundspace,
+    //   link: "https://soundspace-0iyz.onrender.com/",
+    //   description: "Soundspace, powered by the MERN stack and AWS S3, is a dynamic web app tailored to budding artists with grassroots followings."
+    // },
+    // {
+    //   title: "Fableton",
+    //   subtitle: "Vanilla JS",
+    //   image: fableton,
+    //   link: "https://somestufficode.github.io/Fableton/",
+    //   description: "A beat sequencer with kick, snare, hi-hat, and bass tracks. Built using vanilla JS, it offers a piano roll for live melody harmonization."
+    // },
   ];
 
   // Simulate a data loading process with a timeout
@@ -91,7 +91,7 @@ const MobileComponent = () => {
       </section>
 
       <section className="mobile-projects-section">
-        <p className="swipe-text">Swipe to see more projects!</p>
+        <p className="swipe-text">Swipe!</p>
         <Swiper spaceBetween={20} slidesPerView={1} centeredSlides pagination={{ clickable: true }}>
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
@@ -112,7 +112,7 @@ const MobileComponent = () => {
         </Swiper>
         {/* Desktop Recommendation */}
         <div className="desktop-message">
-          <p>👋 Pssssh. This site looks even better on desktop. 😉</p>
+          <p>👋 Pssssh. This site looks even better on desktop. 😉 With even more projects and art!</p>
         </div>
       </section>
     </div>
